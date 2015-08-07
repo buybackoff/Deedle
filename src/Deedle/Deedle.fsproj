@@ -22,7 +22,8 @@
     <OutputPath>../../bin/</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <WarningLevel>3</WarningLevel>
-    <DocumentationFile>../../bin/Deedle.xml</DocumentationFile>
+    <DocumentationFile>
+    </DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -31,7 +32,8 @@
     <OutputPath>../../bin/</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <WarningLevel>3</WarningLevel>
-    <DocumentationFile>../../bin/Deedle.xml</DocumentationFile>
+    <DocumentationFile>
+    </DocumentationFile>
   </PropertyGroup>
   <PropertyGroup>
     <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>
@@ -43,6 +45,12 @@
     <FSharpTargetsPath>$(MSBuildExtensionsPath32)\..\Microsoft SDKs\F#\3.0\Framework\v4.0\Microsoft.FSharp.Targets</FSharpTargetsPath>
   </PropertyGroup>
   <Import Project="$(FSharpTargetsPath)" Condition="Exists('$(FSharpTargetsPath)')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  -->
+  <!--<Import Project="..\..\.paket\paket.targets" />-->
   <ItemGroup>
     <Compile Include="FSharp.Data\TextConversions.fsi" />
     <Compile Include="FSharp.Data\TextRuntime.fsi" />
@@ -52,8 +60,6 @@
     <Compile Include="FSharp.Data\CsvFile.fsi" />
     <Compile Include="FSharp.Data\CsvInference.fsi" />
     <Compile Include="FSharp.Data\Stubs.fs" />
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="..\..\paket-files\fsharp\FSharp.Data\src\CommonRuntime\TextConversions.fs">
       <Paket>True</Paket>
       <Link>FSharp.Data/TextConversions.fs</Link>
@@ -126,10 +132,4 @@
     <Reference Include="System.Numerics" />
     <Reference Include="System.Xml" />
   </ItemGroup>
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  -->
-  <Import Project="..\..\.paket\paket.targets" />
 </Project>
